@@ -7,12 +7,13 @@ grey - #95a5a6;
 red - #ee5253
 
 */
+
 body {
   background-image: url(./assets/burger-friends.jpg);
   background-size: 100%;
   margin: 0;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; */
 
 }
 
@@ -36,9 +37,11 @@ h2 {
 
 main {
   display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
+  /* flex-grow: 1; */
+  /* ----Why is flex grow not being applied?----*/
   justify-content: space-evenly;
+  align-items: flex-start;
+
 }
 
 .boxes {
@@ -49,11 +52,11 @@ main {
   width: 400px;
   display: flex;
   flex-direction: column;
-
+  /* align-items: stretch; */
 }
 
 .box-one {
-
+  flex-grow: 1;
 }
 
 .button-cook {
@@ -63,10 +66,11 @@ main {
 }
 
 .box-two {
-  display: flex;
+  flex-grow: 1;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center */
 }
 
 .pot {
