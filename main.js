@@ -42,14 +42,10 @@ function letsCook() {
 
 function displayDish(randomSelection) {
   document.querySelector('#cook-this').innerText = `${randomSelection}!`;
-
-  // document.querySelector('#cook-this').innerText = `${randomSelection}!`;
 }
 
 function displayMeal(side, main, dessert) {
   document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
-
-  // document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
 }
 
 function displayElements() {
@@ -57,9 +53,6 @@ function displayElements() {
   document.querySelector('h5').classList.remove('hidden');
   document.querySelector('#cook-this').classList.remove('hidden');
   document.querySelector('.button-clear').classList.remove('hidden');
-
-  // document.querySelector('.pot').classList.add('hidden');
-  // cookThisBlock.classList.toggle('hidden');
 }
 
 function clear() {
@@ -67,9 +60,6 @@ function clear() {
   document.querySelector('h5').classList.add('hidden');
   document.querySelector('#cook-this').classList.add('hidden');
   document.querySelector('.button-clear').classList.add('hidden');
-
-  // document.querySelector('.pot').classList.remove('hidden');
-  // cookThisBlock.classList.add('hidden');
 }
 
 function displayAddRecipeBar() {
