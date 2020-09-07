@@ -1,20 +1,8 @@
-/* font-family: 'Roboto', sans-serif;
-
-COLORS
-teal - #0fb9b1;
-frosted white - rgba(225, 225, 225, .9);
-grey - #95a5a6;
-red - #ee5253
-
-*/
-
 body {
   background-image: url(./assets/burger-friends.jpg);
   background-size: 100%;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-
-  font-family: 'Roboto', sans-serif; */
-
 }
 
 header {
@@ -28,28 +16,25 @@ header {
 }
 
 .button-recipe {
-  margin-right: 15px;
-  margin-top: 16px;
-  margin-bottom: 16px;
   border: none;
   border-radius: 5px;
+  margin-top: 16px;
+  margin-right: 15px;
+  margin-bottom: 16px;
 }
 
 main {
   display: flex;
-  flex-grow: 1;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap
-
 }
 
 .boxes {
-  margin-top: 44px;
   background-color: rgba(225, 225, 225, .9);
   height: 300px;
   width: 400px;
-  align-items: stretch; */
+  margin-top: 44px;
 }
 
 .radio-selection {
@@ -63,6 +48,12 @@ main {
   margin-left: 30px;
 }
 
+span {
+  color: #ee5253;
+  position: absolute;
+  top: 146px;
+}
+
 label {
   padding-bottom: 10px
 }
@@ -73,15 +64,14 @@ label {
 
 .button-cook {
   flex-direction: column;
-  padding-left: 40px;
   background-color: #0fb9b1;
   border: solid blue .5px;
   border-radius: 5px;
   width: fit-content;
   padding-top: 8px;
+  padding-right: 20px;
   padding-bottom: 8px;
   padding-left: 20px;
-  padding-right: 20px;
   margin-left: 35px;
 }
 
@@ -89,25 +79,24 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
 }
 
 .pot {
   height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 h5 {
   font-style: italic;
+  margin-bottom: 5px;
 }
 
-#suggestion {
+#cook-this {
   margin: 0px 10px 10px 10px;
-  align-content: center;
-
+  text-align: center;
 }
 
 .button-clear {
@@ -116,9 +105,9 @@ h5 {
   border: none;
   border-radius: 5px;
   align-self: flex-end;
-  margin-right: 16px;
-
-
+  position: absolute;
+  right: 11;
+  bottom: 11;
 }
 
 footer {
@@ -126,7 +115,6 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-top: 150px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -134,9 +122,9 @@ footer {
 }
 
 .footer-elmts {
-  margin-left: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .button-new {

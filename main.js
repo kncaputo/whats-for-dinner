@@ -16,7 +16,7 @@ function letsCook() {
   var selection = document.getElementById('user-choice').elements['user-choice'].value;
   var randomSelection;
   if (selection === "side") {
-    randomSelection = mainDish[getRandomIndex(side)];
+    randomSelection = side[getRandomIndex(side)];
     displayDish(randomSelection);
     displayElements();
   }
@@ -26,7 +26,7 @@ function letsCook() {
     displayElements();
   }
   if (selection === "dessert") {
-    randomSelection = mainDish[getRandomIndex(dessert)];
+    randomSelection = dessert[getRandomIndex(dessert)];
     displayDish(randomSelection);
     displayElements();
   }
@@ -62,7 +62,7 @@ function clear() {
 }
 
 function displayAddRecipeBar() {
-  document.querySelector('footer').classList.remove('hidden');
+  document.querySelector('footer').classList.toggle('hidden');
 }
 
 function saveNew() {
