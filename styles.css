@@ -23,7 +23,7 @@ header {
   justify-content: space-between;
 }
 
-h2 {
+.top-header {
   padding-left: 15px;
 }
 
@@ -37,65 +37,88 @@ h2 {
 
 main {
   display: flex;
-  /* flex-grow: 1; */
-  /* ----Why is flex grow not being applied?----*/
-  justify-content: space-evenly;
+  flex-grow: 1;
+  justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap
 
 }
 
 .boxes {
   margin-top: 44px;
-  margin-bottom: 150px;
   background-color: rgba(225, 225, 225, .9);
   height: 300px;
   width: 400px;
-  display: flex;
-  flex-direction: column;
-  /* align-items: stretch; */
+  align-items: stretch; */
 }
 
-.box-one {
-  flex-grow: 1;
+.radio-selection {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+.radio-header {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+label {
+  padding-bottom: 10px
+}
+
+.b-one {
+  padding-left: 40px;
 }
 
 .button-cook {
+  flex-direction: column;
+  padding-left: 40px;
   background-color: #0fb9b1;
-  border: solid blue 2px;
+  border: solid blue .5px;
   border-radius: 5px;
+  width: fit-content;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 35px;
 }
 
-.box-two {
-  flex-grow: 1;
-  /* display: flex;
+.b-two {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center */
+  align-items: center
 }
 
 .pot {
-  /* align-items: center;
-  justify-content: center; */
-  height: 100px;
-  width: 100px;
+  height: 40%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h5 {
   font-style: italic;
 }
 
-selection {
+#suggestion {
+  margin: 0px 10px 10px 10px;
+  align-content: center;
 
 }
 
 .button-clear {
   background-color: #95a5a6;
   color: white;
-  display: flex;
-  justify-content: flex-end;
   border: none;
   border-radius: 5px;
+  align-self: flex-end;
+  margin-right: 16px;
+
+
 }
 
 footer {
@@ -103,6 +126,11 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-top: 150px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
 }
 
 .footer-elmts {

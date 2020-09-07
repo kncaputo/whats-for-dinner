@@ -1,12 +1,12 @@
-// Add Random Side, Main and Dessert Functionality
-//
-// - When a user selects a dish option (don't worry about "Entire Meal" yet) and then clicks the "Let's Cook!" button, the user sees a random dish from the list of possible dishes for that category
-// - When the dish name appears, the cookpot icon disappears
 var cookButton = document.querySelector('.button-cook');
-
-var selectedDish;
+var clearButton = document.querySelector('.button-clear');
+var addRecipe = document.querySelector('.button-recipe');
+var saveRecipe = document.querySelector('.button-new');
 
 cookButton.addEventListener('click', letsCook);
+clearButton.addEventListener('click', clear);
+addRecipe.addEventListener('click', displayAddRecipeBar);
+saveRecipe.addEventListener('click', saveNew);
 
 function getRandomIndex(arr) {
   return Math.floor(Math.random() * arr.length);
@@ -17,24 +17,66 @@ function letsCook() {
   var randomSelection;
   if (selection === "side") {
     randomSelection = mainDish[getRandomIndex(side)];
+    displayDish(randomSelection);
+    displayElements();
   }
   if (selection === "mainDish") {
     randomSelection = mainDish[getRandomIndex(mainDish)];
+    displayDish(randomSelection);
+    displayElements();
   }
   if (selection === "dessert") {
     randomSelection = mainDish[getRandomIndex(dessert)];
+    displayDish(randomSelection);
+    displayElements();
   }
   if (selection === "entireMeal") {
-    randomSelection = mainDish[getRandomIndex(mainDish)];
+    randomSide = side[getRandomIndex(side)];
+    randomMain = mainDish[getRandomIndex(mainDish)];
+    randomDessert = dessert[getRandomIndex(dessert)];
+    displayMeal(randomSide, randomMain, randomDessert);
+    displayElements();
   }
-  toggleSelection(randomSelection);
 }
-//
-// function randomDish() {
-//
-// }
-//
-function toggleSelection(randomSelection) {
-  // document.querySelector('#cook-this').classList.
-  console.log(randomSelection)
+
+function displayDish(randomSelection) {
+  document.querySelector('#cook-this').innerText = `${randomSelection}!`;
+}
+
+function displayMeal(side, main, dessert) {
+  document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
+}
+
+function displayElements() {
+  document.querySelector('.pot').classList.add('hidden');
+  document.querySelector('h5').classList.remove('hidden');
+  document.querySelector('#cook-this').classList.remove('hidden');
+  document.querySelector('.button-clear').classList.remove('hidden');
+}
+
+function clear() {
+  document.querySelector('.pot').classList.remove('hidden');
+  document.querySelector('h5').classList.add('hidden');
+  document.querySelector('#cook-this').classList.add('hidden');
+  document.querySelector('.button-clear').classList.add('hidden');
+}
+
+function displayAddRecipeBar() {
+  document.querySelector('footer').classList.remove('hidden');
+}
+
+function saveNew() {
+  var recipeType = document.querySelector('#recipe-type').value.toLowerCase();
+  var recipeName = document.querySelector('#recipe-name').value.toLowerCase();
+
+  if (recipeType === 'side') {
+    side.push(recipeName);
+  }
+  if (recipeType === 'main dish') {
+    mainDish.push(recipeName);
+  }
+  if (recipeType === 'dessert') {
+    dessert.push(recipeName);
+    console.log(dessert)
+  }
 }
