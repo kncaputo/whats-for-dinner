@@ -12,10 +12,10 @@
       <div class="boxes b-one">
         <h2 class="radio-header">What are you looking for?<span>*</span></h2>
         <form class="radio-selection" id="user-choice">
-          <label><input type="radio" id="side" name="user-choice" value="side"> Side</label>
-          <label><input type="radio" id="mainDish" name="user-choice" value="mainDish"> Main Dish</label>
-          <label><input type="radio" id="dessert" name="user-choice" value="dessert"> Dessert</label>
-          <label><input type="radio" id="entireMeal" name="user-choice" value="entireMeal"> Entire Meal</label>
+          <label class="top-label"><input type="radio" id="side" name="user-choice" value="side"> Side</label>
+          <label class="top-label"><input type="radio" id="mainDish" name="user-choice" value="mainDish"> Main Dish</label>
+          <label class="top-label"><input type="radio" id="dessert" name="user-choice" value="dessert"> Dessert</label>
+          <label class="top-label"><input type="radio" id="entireMeal" name="user-choice" value="entireMeal"> Entire Meal</label>
         </form>
         <button class="button-cook">LET'S COOK!</button>
       </div>
@@ -29,10 +29,10 @@
       </div>
     </main>
     <footer class="hidden">
-      <label for="recipe-type" class="footer-elmts">Recipe Type:</label>
-      <input type="text" class="footer-elmts" id="recipe-type" size=:"10">
-      <label for="recipe-name" class="footer-elmts">Recipe Name:</label>
-      <input type="text" class="footer-elmts" id="recipe-name" size=:"10">
+      <label for="recipe-type" class="footer-elmts bottom-label">Recipe Type:</label>
+      <input type="text" class="footer-elmts" id="recipe-type" size=:"10" placeholder="Side, Main, or Dessert">
+      <label for="recipe-name" class="footer-elmts bottom-label">Recipe Name:</label>
+      <input type="text" class="footer-elmts" id="recipe-name" size=:"10" placeholder="Recipe Name">
       <button class="button-new footer-elmts">ADD NEW</button>
       <button class="button-clear-form footer-elmts hidden">CLEAR</button>
     <footer>
