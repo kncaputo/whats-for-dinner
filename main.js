@@ -1,10 +1,11 @@
 var cookButton = document.querySelector('.button-cook');
-var clearButton = document.querySelector('.button-clear');
+var clearDisplay = document.querySelector('.button-clear');
 var addRecipe = document.querySelector('.button-recipe');
 var saveRecipe = document.querySelector('.button-new');
+var clearFormButton = document.querySelector('.button-clear-form');
 
 cookButton.addEventListener('click', letsCook);
-clearButton.addEventListener('click', clear);
+clearDisplay.addEventListener('click', clear);
 addRecipe.addEventListener('click', displayAddRecipeBar);
 saveRecipe.addEventListener('click', saveNew);
 
@@ -41,10 +42,14 @@ function letsCook() {
 
 function displayDish(randomSelection) {
   document.querySelector('#cook-this').innerText = `${randomSelection}!`;
+
+  // document.querySelector('#cook-this').innerText = `${randomSelection}!`;
 }
 
 function displayMeal(side, main, dessert) {
   document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
+
+  // document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
 }
 
 function displayElements() {
@@ -52,6 +57,9 @@ function displayElements() {
   document.querySelector('h5').classList.remove('hidden');
   document.querySelector('#cook-this').classList.remove('hidden');
   document.querySelector('.button-clear').classList.remove('hidden');
+
+  // document.querySelector('.pot').classList.add('hidden');
+  // cookThisBlock.classList.toggle('hidden');
 }
 
 function clear() {
@@ -59,6 +67,9 @@ function clear() {
   document.querySelector('h5').classList.add('hidden');
   document.querySelector('#cook-this').classList.add('hidden');
   document.querySelector('.button-clear').classList.add('hidden');
+
+  // document.querySelector('.pot').classList.remove('hidden');
+  // cookThisBlock.classList.add('hidden');
 }
 
 function displayAddRecipeBar() {
@@ -70,13 +81,39 @@ function saveNew() {
   var recipeName = document.querySelector('#recipe-name').value.toLowerCase();
 
   if (recipeType === 'side') {
-    side.push(recipeName);
+    if (!side.includes(recipeName)) {
+      side.push(recipeName);
+      alert('Recipe Added');
+    } else {
+      alert('This recipe already exsists');
+    }
   }
   if (recipeType === 'main dish') {
-    mainDish.push(recipeName);
+    if (!mainDish.includes(recipeName)) {
+      mainDish.push(recipeName);
+      alert('Recipe Added');
+    } else {
+      alert('This recipe already exsists');
+    }
   }
   if (recipeType === 'dessert') {
-    dessert.push(recipeName);
-    console.log(dessert)
+    if (!dessert.includes(recipeName)) {
+      dessert.push(recipeName);
+      alert('Recipe Added');
+    } else {
+      alert('This recipe alredy exsists');
+    }
   }
+  displayClearForm();
+}
+
+function displayClearForm() {
+  clearFormButton.classList.remove('hidden');
+  clearFormButton.addEventListener('click', clearForm);
+}
+
+function clearForm() {
+  document.getElementById("recipe-type").value = "";
+  document.getElementById("recipe-name").value = "";
+  clearFormButton.classList.add('hidden');
 }
