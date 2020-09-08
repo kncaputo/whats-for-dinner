@@ -1,12 +1,15 @@
-var cookButton = document.querySelector('.button-cook');
-var clearDisplay = document.querySelector('.button-clear');
 var addRecipe = document.querySelector('.button-recipe');
-var saveRecipe = document.querySelector('.button-new');
+var clearDisplay = document.querySelector('.button-clear');
 var clearFormButton = document.querySelector('.button-clear-form');
+var cookButton = document.querySelector('.button-cook');
+var cookThis = document.querySelector('#cook-this');
+var cookThisHeading = document.querySelector('h5');
+var pot = document.querySelector('.pot');
+var saveRecipe = document.querySelector('.button-new');
 
-cookButton.addEventListener('click', letsCook);
-clearDisplay.addEventListener('click', clear);
 addRecipe.addEventListener('click', displayAddRecipeBar);
+clearDisplay.addEventListener('click', clear);
+cookButton.addEventListener('click', letsCook);
 saveRecipe.addEventListener('click', saveNew);
 
 function getRandomIndex(arr) {
@@ -16,6 +19,7 @@ function getRandomIndex(arr) {
 function letsCook() {
   var selection = document.getElementById('user-choice').elements['user-choice'].value;
   var randomSelection;
+
   if (selection === "side") {
     randomSelection = side[getRandomIndex(side)];
     displayDish(randomSelection);
@@ -41,25 +45,25 @@ function letsCook() {
 }
 
 function displayDish(randomSelection) {
-  document.querySelector('#cook-this').innerText = `${randomSelection}!`;
+  cookThis.innerText = `${randomSelection}!`;
 }
 
 function displayMeal(side, main, dessert) {
-  document.querySelector('#cook-this').innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
+  cookThis.innerText = `${main} with a side of ${side} and ${dessert} for dessert!`;
 }
 
 function displayElements() {
-  document.querySelector('.pot').classList.add('hidden');
-  document.querySelector('h5').classList.remove('hidden');
-  document.querySelector('#cook-this').classList.remove('hidden');
-  document.querySelector('.button-clear').classList.remove('hidden');
+  pot.classList.add('hidden');
+  cookThisHeading.classList.remove('hidden');
+  cookThis.classList.remove('hidden');
+  clearDisplay.classList.remove('hidden');
 }
 
 function clear() {
-  document.querySelector('.pot').classList.remove('hidden');
-  document.querySelector('h5').classList.add('hidden');
-  document.querySelector('#cook-this').classList.add('hidden');
-  document.querySelector('.button-clear').classList.add('hidden');
+  pot.classList.remove('hidden');
+  cookThisHeading.classList.add('hidden');
+  cookThis.classList.add('hidden');
+  clearDisplay.classList.add('hidden');
 }
 
 function displayAddRecipeBar() {

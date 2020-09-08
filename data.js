@@ -40,10 +40,9 @@ var dessert = [
   'Macarons',
   'Chocolate Cupcakes',
   'Pavlova',
+  'Pumpkin Pie',
+  'Key Lime Pie',
+  'Tart Tatin',
+  'Croissants',
+  'Eclairs',
 ]
-
-// - Pumpkin Pie
-// - Key Lime Pie
-// - Tart Tatin
-// - Croissants
-// - Eclairs
